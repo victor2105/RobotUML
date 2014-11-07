@@ -19,7 +19,7 @@ private:
 public:
     
     
-    void setId(int n);
+    void setId(int);
     
     int getId();
     

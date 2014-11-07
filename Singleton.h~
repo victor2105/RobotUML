@@ -10,8 +10,6 @@ using namespace std;
 class MySingleton{
 private:
 
-    static MySingleton * inst;
-
     MySingleton(){
     
     }
@@ -21,7 +19,7 @@ private:
 public:
     
     
-    void setId(int n);
+    void setId(int);
     
     int getId();
     

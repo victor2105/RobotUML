@@ -1,7 +1,9 @@
-#include "Singleton.h"
+#include "MySingleton.h"
+
 
     void MySingleton::setId(int n){
-        id = n;
+        int i = 8;
+        id = n + i;
     }
     
     int MySingleton::getId(){

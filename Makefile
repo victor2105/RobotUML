@@ -1,10 +1,10 @@
-include projectHobot.mk
+include projectRobot.mk
 
 
 all: robot
 
-robot:  $(DEPSH) $(DEPSCPP) $(MAIN) 
-	$(CC) $(DEPSH) $(DEPSCPP) $(MAIN) -o robot $(CFLAGS) 
+robot:  $(DEPS_H) $(DEPS_CPP) $(MAIN) 
+	$(CC) $(DEPS_H) $(DEPS_CPP) $(MAIN) -o robot $(CFLAGS) 
 	
 clean:
 	rm -rf *.o robot
@@ -12,4 +12,3 @@ clean:
 #-----------------------------------------------------------------------
 # Local dependencies
 #-----------------------------------------------------------------------
-

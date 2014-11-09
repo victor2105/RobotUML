@@ -1,12 +1,12 @@
 #include <iostream>
-#include "MySingleton.h"
 
 using namespace std;
 
-
 int main(){
-    
-    
-    
-    return 0;
+
+	string cmd;
+	while(cin >> cmd) {
+		cout << cmd << endl;
+	}
+	return 0;
 }

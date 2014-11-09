@@ -1,19 +1,21 @@
 /*
- * EtatRobot.cpp
+ * EnRoute.cpp
  *
  *  Created on: 9 nov. 2014
  *      Author: victorhs
  */
 
-#include "../etat/EtatRobot.h"
+#include "EnRoute.h"
 
-EtatRobot::EtatRobot() {
+EnRoute::EnRoute() {
 	// TODO Auto-generated constructor stub
 
 }
 
-EtatRobot::~EtatRobot() {
+EnRoute::~EnRoute() {
 	// TODO Auto-generated destructor stub
 }
 
-
+EtatRobot * EnRoute::figer(){
+	return Figer::instance();
+}

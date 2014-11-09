@@ -5,16 +5,18 @@
  *      Author: victorhs
  */
 
-#include "../etat/EtatRobot.h"
+
 
 #ifndef AVIDE_H_
 #define AVIDE_H_
 
-class AVide : public EtatRobot {
+
+#include "EnRoute.h"
+
+class AVide : public EnRoute {
 public:
 	AVide();
 	virtual ~AVide();
-
 
 };
 

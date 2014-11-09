@@ -5,12 +5,13 @@
  *      Author: victorhs
  */
 
-#include "../etat/EtatRobot.h"
 
 #ifndef AVIDEFACEPLOT_H_
 #define AVIDEFACEPLOT_H_
 
-class AVideFacePlot : public EtatRobot {
+#include "EnRoute.h"
+
+class AVideFacePlot : public EnRoute {
 public:
 	AVideFacePlot();
 	virtual ~AVideFacePlot();

@@ -1,19 +1,22 @@
 /*
- * EtatRobot.cpp
+ * Figer.cpp
  *
  *  Created on: 9 nov. 2014
  *      Author: victorhs
  */
 
-#include "../etat/EtatRobot.h"
+#include "Figer.h"
 
-EtatRobot::EtatRobot() {
+Figer::Figer() {
 	// TODO Auto-generated constructor stub
 
 }
 
-EtatRobot::~EtatRobot() {
+Figer::~Figer() {
 	// TODO Auto-generated destructor stub
 }
 
-
+EtatRobot * Figer::instance(){
+	static Figer inst;
+	return &inst;
+}

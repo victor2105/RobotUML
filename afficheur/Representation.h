@@ -11,8 +11,11 @@
 #include <iostream>
 #include <list>
 #include <iterator>
+#include <algorithm>
 
 using namespace std;
+
+class Afficheur;
 
 class Representation {
 
@@ -20,7 +23,7 @@ class Representation {
 	list<Afficheur*> listAff;
 	typedef std::list<Afficheur*>::iterator iterator; 
 	typedef std::list<Afficheur*>::const_iterator const_iterator;
-	virtual ~Representation() = default;
+	virtual ~Representation();
 	
   public:
 	virtual void update(const Afficheur* observable) const ;

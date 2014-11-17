@@ -7,22 +7,20 @@
 
 #include "../afficheur/Afficheur.h"
 
+using namespace std;
+
 void Afficheur::attacher( Representation* obs) {
 	    //on ajoute l'observateur à notre liste 
-    m_list.push_back(obs);
+    list.push_back(obs);
 
     //et on lui donne un nouvel objet observé.
     obs->attacher(this);
 }
 void Afficheur::detacher(Representation* obs) {
 	//même chose que dans Representation::detacher
-	iterator it= find(list.begin(),list.end(),obs);
+	iterator it= std::find(list.begin(),list.end(),obs);
     if(it != list.end())
        list.erase(it);
-}
-
-Info Afficheur::Statut(void) const =0 {
-
 }
 
 Afficheur::~Afficheur() {

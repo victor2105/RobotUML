@@ -1,18 +1,15 @@
 /*
- * Object.cpp
+ * Representation.cpp
  *
- *  Created on: 9 nov. 2014
- *      Author: victorhs
+ *  Created on: 17 nov. 2014
+ *      Author: GuillaumeUnice
  */
 
-#include "../objets/Object.h"
+#include "../afficheur/Representation.h"
 
-Object::Object() {
-	// TODO Auto-generated constructor stub
+using namespace std;
 
+void Afficheur::update() const {
+	//on affiche l'état de la variable
+	cout << observable->afficher() << endl;
 }
-
-Object::~Object() {
-	// TODO Auto-generated destructor stub
-}
-

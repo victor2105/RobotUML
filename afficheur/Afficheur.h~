@@ -1,5 +1,5 @@
 /*
- * Afficheur.h
+ * Represnetation.h
  *
  *  Created on: 17 nov. 2014
  *      Author: GuillaumeUnice
@@ -8,10 +8,21 @@
 #ifndef AFFICHEUR_H_
 #define AFFICHEUR_H_
 
-class Object {
-public:
-	Afficheur();
-	virtual ~Afficheur();
+#include <iostream>
+#include <list>
+#include <iterator>
+#include <algorithm>
+
+using namespace std;
+
+class Representation;
+
+class Afficheur {
+
+  public:
+  	Representation r;
+  	Afficheur(Representation rep) { r = rep; }
+	virtual void update() const  = 0;
 };
 
 #endif /* AFFICHEUR_H_ */

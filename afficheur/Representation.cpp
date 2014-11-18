@@ -1,37 +1,47 @@
 /*
- * Representation.cpp
+ * Afficheur.cpp
  *
  *  Created on: 17 nov. 2014
  *      Author: GuillaumeUnice
  */
 
 #include "../afficheur/Representation.h"
-#include "../afficheur/Afficheur.h"
 
 using namespace std;
 
-void Representation::update(const Afficheur* observable) const {
-	//on affiche l'état de la variable
-	cout << observable->Statut() << endl;
-}
-void Representation::attacher(Afficheur* obs) {
-	listAff.push_back(obs);
+void Representation::attacher( Afficheur* obs) {
+	    //on ajoute l'observateur à notre liste 
+    list.push_back(obs);
+
+    //et on lui donne un nouvel objet observé.
+   // obs->attacher(this);
 }
 void Representation::detacher(Afficheur* obs) {
-	//on enlève l'objet observé.
-	iterator it= find(listAff.begin(),listAff.end(),obs);
-	if(it != listAff.end())
-		listAff.erase(it);
+	//même chose que dans Afficheur::detacher
+	iterator it= std::find(list.begin(),list.end(),obs);
+    if(it != list.end())
+       list.erase(it);
 }
- 
-Representation::~Representation()
-{
-       //pour chaque objet observé, 
-        //on lui dit qu'on doit supprimer l'observateur courant
-       const_iterator ite=listAff.end();
-       
-       for(iterator itb=listAff.begin();itb!=ite;++itb)
-       {
-               (*itb)->detacher(this);
-       }
+
+Representation::~Representation() {
+ 	//même chose qu'avec Afficheur::~Afficheur
+	iterator itb=list.begin();
+	const_iterator ite=list.end();
+
+/*	for(;itb!=ite;++itb)
+	{
+		   (*itb)->detacher(this);
+	}*/
 }
+
+void Representation::notifier(void) {
+	//on prévient chaque observateur que l'on change de valeur
+	iterator itb=list.begin();
+	const_iterator ite=list.end();
+
+	for(;itb!=ite;++itb)
+	{
+		   (*itb)->update(this);
+	}
+}
+

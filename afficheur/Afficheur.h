@@ -1,5 +1,5 @@
 /*
- * Afficheur.h
+ * Represnetation.h
  *
  *  Created on: 17 nov. 2014
  *      Author: GuillaumeUnice
@@ -12,24 +12,15 @@
 #include <list>
 #include <iterator>
 #include <algorithm>
-#include "../afficheur/Representation.h"
 
 using namespace std;
 
-class Afficheur {
-  private:
-	std::list<Representation*> list;
-	typedef std::list<Representation*>::iterator iterator; 
-	typedef std::list<Representation*>::const_iterator const_iterator;
+class Representation;
 
- public:
-    void attacher( Representation* obs);
-    void detacher(Representation* obs);
- 
-    virtual int Statut(void) const =0;
-    virtual ~Afficheur();
- protected:
-    void Notifier(void);
+class Afficheur {
+
+  public:
+	virtual void update(const Representation* observable) const ;
 };
 
 #endif /* AFFICHEUR_H_ */

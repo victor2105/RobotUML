@@ -7,11 +7,13 @@
 
 #ifndef AFFICHEUR_A_H_
 #define AFFICHEUR_A_H_
-
-class Afficheur_A {
-public:
-	Afficheur_A();
-	virtual ~Afficheur_A();
+#include "../afficheur/Representation.h"
+class Afficheur_A : public Representation {
+  private:
+	int val;
+  public:
+	virtual int afficher(void) const;
+	void change(int valeur);
 };
 
 #endif /* AFFICHEUR_A_H_ */

@@ -1,18 +1,24 @@
 /*
- * Object.cpp
+ * Afficheur_A.cpp
  *
- *  Created on: 9 nov. 2014
- *      Author: victorhs
+ *  Created on: 17 nov. 2014
+ *      Author: GuillaumeUnice
  */
+ 
+#include <iostream>
+#include "../afficheur/Afficheur_A.h"
+#include "../afficheur/Afficheur.h"
+#include "../afficheur/Representation.h"
 
-#include "../objets/Object.h"
+using namespace std;
 
-Object::Object() {
-	// TODO Auto-generated constructor stub
-
+void Afficheur_A::change(int valeur) {
+	val = valeur;
+	notifier();
 }
+void update() const
+{
 
-Object::~Object() {
-	// TODO Auto-generated destructor stub
+	cout << "Afficheur A : " << r.test << endl;
+	return val;
 }
-

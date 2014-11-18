@@ -4,15 +4,20 @@
  *  Created on: 17 nov. 2014
  *      Author: GuillaumeUnice
  */
-
+ 
+#include <iostream>
 #include "../afficheur/Afficheur_A.h"
+#include "../afficheur/Afficheur.h"
+#include "../afficheur/Representation.h"
 
-Afficheur_A::Afficheur_A() {
-	// TODO Auto-generated constructor stub
+using namespace std;
 
+void Afficheur_A::change(int valeur) {
+	val = valeur;
+	notifier();
 }
+int Afficheur_A::afficher(void) const {
 
-Afficheur_A::~Afficheur_A() {
-	// TODO Auto-generated destructor stub
+	cout << "Afficheur A : " << test << endl;
+	return val;
 }
-

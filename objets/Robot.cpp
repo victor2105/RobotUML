@@ -26,3 +26,35 @@ void Robot::avancer(int x, int y){
 		cout << "Mouvement non permis" << endl ;
 	}
 }
+
+void Robot::tourner(string direction){
+
+}
+
+void Robot::saisir(Object o){
+
+}
+
+ int Robot::peser(){
+	 return 0;
+ }
+
+ int Robot::rencontrerPlot(Plot p){
+	return 0;
+ }
+ int Robot::evaluerPlot(){
+	return 0;
+ }
+void Robot::figer(){
+
+}
+void Robot::repartir(){
+
+}
+EtatRobot * Robot::getEtat(){
+	return 0;
+}
+
+void Robot::afficher(){
+
+}

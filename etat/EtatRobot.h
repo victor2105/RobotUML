@@ -26,7 +26,7 @@ public:
 	class ActionNotAvaliableException {};
 
 	// Methods
-	virtual void avancer()			 		{throw ActionNotAvaliableException();}
+	virtual void		avancer()			 		{throw ActionNotAvaliableException();}
 	virtual EtatRobot * tourner() 			{throw ActionNotAvaliableException();}
 	virtual EtatRobot * saisir(Object)		{throw ActionNotAvaliableException();}
 	virtual int 		peser()				{throw ActionNotAvaliableException();}

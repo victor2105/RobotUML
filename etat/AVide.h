@@ -18,6 +18,8 @@ public:
 	AVide();
 	virtual ~AVide();
 
+	void avancer()			 		{}
+
 };
 
 #endif /* AVIDE_H_ */

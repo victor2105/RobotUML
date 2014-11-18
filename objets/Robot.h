@@ -12,6 +12,7 @@
 #include "../etat/EtatRobot.h"
 #include "../etat/AVide.h"
 #include "Position.h"
+#include "Object.h"
 
 
 using namespace std;
@@ -27,8 +28,16 @@ public:
 	Position position;
 
 
-	void avancer(int x, int y);
-
+	void		avancer(int x, int y);
+	void		tourner(string direction);
+	void		saisir(Object o);
+	 int		peser();
+	 int		rencontrerPlot(Plot p);
+	 int		evaluerPlot();
+	void		figer();
+	void		repartir();
+	EtatRobot * getEtat();
+	void		afficher();
 
 };
 

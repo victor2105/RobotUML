@@ -3,7 +3,7 @@ CC=g++
 PACKAGE_ROOT =
 
 
-CFLAGS = -Wall -std=c++11 -W
+CFLAGS =  -std=c++11 -W
 
 DEPS_H =  objets/*.h etat/*.h afficheur/*.h
 

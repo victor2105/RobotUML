@@ -12,7 +12,7 @@ int main(){
 	Afficheur_A aff2;
     //un faux bloc pour limiter la portée
 	{
-		Afficheur rep;
+		Representation rep;
 	 	aff2.attacher(&rep);
 		aff.attacher(&rep);
 		aff.change(31);

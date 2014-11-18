@@ -8,13 +8,16 @@
 #ifndef AFFICHEUR_A_H_
 #define AFFICHEUR_A_H_
 #include "../afficheur/Representation.h"
-class Afficheur_A : public Representation {
+class Afficheur_A : Afficheur{
   private:
-	int val;
+	//int val;
   public:
-	virtual void update() const;
-	void change(int valeur);
+  	void update(const Representation* observable) const {
+  		cout << observable->test << endl;
+  	}
+	//virtual int afficher(void) const;
+	//void change(int valeur);
+	
 };
 
 #endif /* AFFICHEUR_A_H_ */
-

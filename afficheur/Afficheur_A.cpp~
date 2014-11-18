@@ -16,9 +16,8 @@ void Afficheur_A::change(int valeur) {
 	val = valeur;
 	notifier();
 }
-void update() const
-{
+int Afficheur_A::afficher(void) const {
 
-	cout << "Afficheur A : " << r.test << endl;
+	cout << "Afficheur A : " << test << endl;
 	return val;
 }

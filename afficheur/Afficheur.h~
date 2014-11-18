@@ -20,9 +20,7 @@ class Representation;
 class Afficheur {
 
   public:
-  	Representation r;
-  	Afficheur(Representation rep) { r = rep; }
-	virtual void update() const  = 0;
+	virtual void update(const Representation* observable) const ;
 };
 
 #endif /* AFFICHEUR_H_ */

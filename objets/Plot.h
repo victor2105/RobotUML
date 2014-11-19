@@ -12,6 +12,10 @@ class Plot {
 public:
 	Plot();
 	virtual ~Plot();
+
+	int hauteur;
+	int getHauter();
+
 };
 
 #endif /* PLOT_H_ */

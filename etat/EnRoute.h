@@ -17,7 +17,6 @@ public:
 	virtual ~EnRoute();
 
 	EtatRobot * figer();
-
 };
 
 #endif /* ETAT_ENROUTE_H_ */

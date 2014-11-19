@@ -8,10 +8,16 @@
 #ifndef ETAT_ENCHARGE_H_
 #define ETAT_ENCHARGE_H_
 
-class EnCharge {
+#include "EnRoute.h"
+
+class EnCharge  : public EnRoute  {
 public:
 	EnCharge();
 	virtual ~EnCharge();
+
+
+	static EtatRobot * instance();
+
 };
 
 #endif /* ETAT_ENCHARGE_H_ */

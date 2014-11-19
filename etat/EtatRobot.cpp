@@ -17,3 +17,7 @@ EtatRobot::~EtatRobot() {
 }
 
 
+EtatRobot * EtatRobot::instance(){
+	static EtatRobot inst;
+	return &inst;
+}

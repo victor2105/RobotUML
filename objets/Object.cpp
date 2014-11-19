@@ -16,3 +16,6 @@ Object::~Object() {
 	// TODO Auto-generated destructor stub
 }
 
+int Object::getPoids(){
+	return poids;
+}

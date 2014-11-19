@@ -4,15 +4,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../EtatRobot.cpp \
 ../main.cpp 
 
 OBJS += \
-./EtatRobot.o \
 ./main.o 
 
 CPP_DEPS += \
-./EtatRobot.d \
 ./main.d 
 
 

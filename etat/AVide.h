@@ -18,7 +18,11 @@ public:
 	AVide();
 	virtual ~AVide();
 
-	void avancer()			 		{}
+	void avancer(){}
+	EtatRobot * tourner(){return this;}
+
+
+	static EtatRobot * instance();
 
 };
 

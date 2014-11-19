@@ -14,6 +14,9 @@ class EnChargeFacePlot: public EnRoute {
 public:
 	EnChargeFacePlot();
 	virtual ~EnChargeFacePlot();
+
+	static EtatRobot * instance();
+
 };
 
 #endif /* ETAT_ENCHARGEFACEPLOT_H_ */

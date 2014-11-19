@@ -12,6 +12,10 @@ class Object {
 public:
 	Object();
 	virtual ~Object();
+	int poids;
+
+	int getPoids();
+
 };
 
 #endif /* OBJECT_H_ */

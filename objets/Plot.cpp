@@ -9,10 +9,13 @@
 
 Plot::Plot() {
 	// TODO Auto-generated constructor stub
-
 }
 
 Plot::~Plot() {
 	// TODO Auto-generated destructor stub
 }
 
+
+int Plot::getHauter(){
+	return hauteur;
+}

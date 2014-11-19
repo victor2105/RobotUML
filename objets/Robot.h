@@ -21,11 +21,14 @@ class Robot {
 public:
 	Robot();
 	virtual ~Robot();
+
 	EtatRobot * eR;
 	EtatRobot * ancienER;
-	string direction;
 
+	string direction;
 	Position position;
+	Object object;
+	Plot plot;
 
 
 	void		avancer(int x, int y);
@@ -37,7 +40,6 @@ public:
 	void		figer();
 	void		repartir();
 	EtatRobot * getEtat();
-	void		afficher();
 
 };
 

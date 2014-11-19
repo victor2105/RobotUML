@@ -15,6 +15,10 @@ class AVideFacePlot : public EnRoute {
 public:
 	AVideFacePlot();
 	virtual ~AVideFacePlot();
+
+
+	static EtatRobot * instance();
+
 };
 
 #endif /* AVIDEFACEPLOT_H_ */

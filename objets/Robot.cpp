@@ -9,7 +9,7 @@
 
 Robot::Robot() {
 	// TODO Auto-generated constructor stub
-	eR = Figer::instance();
+	eR = BASE_ETAT->getEtat(AVIDE);
 	position.setx(0);
 	position.sety(0);
 }
@@ -37,7 +37,7 @@ void Robot::tourner(string direction){
 
 		ancienER = eR;
 
-		eR = eR->tourner();
+		eR = BASE_ETAT->getEtat(eR->tourner());
 
 		this->direction = direction;
 
@@ -87,7 +87,7 @@ void Robot::saisir(Object o){
 void Robot::figer(){
 	try{
 		ancienER = eR;
-		eR = eR->figer();
+		eR = BASE_ETAT->getEtat(eR->figer());
 	}catch (EtatRobot::ActionNotAvaliableException e) {
 		cout << "Operation non permis" << endl ;
 	}
@@ -102,12 +102,14 @@ void Robot::repartir(){
 	}
 }
 EtatRobot * Robot::getEtat(){
+	return eR;
+}
+
+
+void Robot::poser(){
 	try{
-		ancienER = eR;
-		eR = eR->figer();
+		eR->poser();
 	}catch (EtatRobot::ActionNotAvaliableException e) {
 		cout << "Operation non permis" << endl ;
 	}
-	return 0;
 }
-

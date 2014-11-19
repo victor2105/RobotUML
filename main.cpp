@@ -8,7 +8,6 @@ using namespace std;
 
 int main(){
 
-<<<<<<< HEAD
 	string cmd, direction;
 	Robot robot;
 	int x, y;
@@ -30,7 +29,7 @@ int main(){
 			robot.tourner(direction);
 		}
 	}while(cmd != "exit");
-=======
+/*
 	Afficheur_A aff;
 	Afficheur_A aff2;
     //un faux bloc pour limiter la portée
@@ -43,7 +42,6 @@ int main(){
 	      
 		cout << "test" << endl; 
 		aff.change(45);
-	}
->>>>>>> e6a560830bc1814b135bd1a5cdb58f6fc5e6489b
+	}*/
 	return 0;
 }

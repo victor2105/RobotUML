@@ -9,11 +9,11 @@
 #ifndef OBJETS_ROBOT_H_
 #define OBJETS_ROBOT_H_
 #include <iostream>
-#include "../etat/EtatRobot.h"
-#include "../etat/AVide.h"
+#include "../etat/BasedEtat.h"
 #include "Position.h"
 #include "Object.h"
 
+#define BASE_ETAT BasedEtat::instance()
 
 using namespace std;
 
@@ -40,6 +40,7 @@ public:
 	void		figer();
 	void		repartir();
 	EtatRobot * getEtat();
+	void		poser();
 
 };
 

@@ -16,6 +16,6 @@ EnRoute::~EnRoute() {
 	// TODO Auto-generated destructor stub
 }
 
-EtatRobot * EnRoute::figer(){
-	return Figer::instance();
+string EnRoute::figer(){
+	return FIGE;
 }

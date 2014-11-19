@@ -19,7 +19,8 @@ public:
 	virtual ~AVide();
 
 	void avancer(){}
-	EtatRobot * tourner(){return this;}
+	string		tourner(){return AVIDE; }
+	virtual string		rencontrerPlot(Plot){ return AVIDEFACEPLOT; }
 
 
 	static EtatRobot * instance();

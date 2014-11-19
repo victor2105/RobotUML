@@ -1,0 +1,23 @@
+#include <iostream>
+#include "../afficheur/Afficheur.h"
+#include "../afficheur/Representation.h"
+#include "../afficheur/Afficheur_A.h"
+
+
+using namespace std;
+
+int main(){
+
+	Afficheur_A aff;
+    //un faux bloc pour limiter la portée de la station
+	{
+		Representation rep;
+	 
+		aff.AddObs(&rep);
+		aff.Change(31);
+		
+	}       
+ 
+    aff.Change(45);
+	return 0;
+}

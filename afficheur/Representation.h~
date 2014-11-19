@@ -32,6 +32,7 @@ class Representation {
  
     //virtual int afficher(void) const =0;
     virtual ~Representation();
+ protected:
    
     void notifier(void);
 };

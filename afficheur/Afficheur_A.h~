@@ -8,7 +8,7 @@
 #ifndef AFFICHEUR_A_H_
 #define AFFICHEUR_A_H_
 #include "../afficheur/Representation.h"
-class Afficheur_A : public Afficheur{
+class Afficheur_A : Afficheur{
   private:
 	//int val;
   public:

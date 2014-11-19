@@ -5,26 +5,26 @@
  *      Author: GuillaumeUnice
  */
 
-#include "../afficheur/Representation.h"
+#include "../afficheur/Afficheur.h"
 
 using namespace std;
 
-void Representation::attacher( Afficheur* obs) {
+void Afficheur::attacher( Representation* obs) {
 	    //on ajoute l'observateur à notre liste 
     list.push_back(obs);
 
     //et on lui donne un nouvel objet observé.
    // obs->attacher(this);
 }
-void Representation::detacher(Afficheur* obs) {
-	//même chose que dans Afficheur::detacher
+void Afficheur::detacher(Representation* obs) {
+	//même chose que dans Representation::detacher
 	iterator it= std::find(list.begin(),list.end(),obs);
     if(it != list.end())
        list.erase(it);
 }
 
-Representation::~Representation() {
- 	//même chose qu'avec Afficheur::~Afficheur
+Afficheur::~Afficheur() {
+ 	//même chose qu'avec Representation::~Representation
 	iterator itb=list.begin();
 	const_iterator ite=list.end();
 
@@ -34,7 +34,7 @@ Representation::~Representation() {
 	}*/
 }
 
-void Representation::notifier(void) {
+void Afficheur::notifier(void) {
 	//on prévient chaque observateur que l'on change de valeur
 	iterator itb=list.begin();
 	const_iterator ite=list.end();

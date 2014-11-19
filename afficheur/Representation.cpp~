@@ -41,7 +41,7 @@ void Representation::notifier(void) {
 
 	for(;itb!=ite;++itb)
 	{
-		   (*itb)->update(this);
+		   (*itb)->update();
 	}
 }
 

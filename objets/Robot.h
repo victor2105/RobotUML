@@ -25,6 +25,8 @@ public:
 	EtatRobot * eR;
 	EtatRobot * ancienER;
 
+	bool aObjet;
+
 	string direction;
 	Position position;
 	Object object;

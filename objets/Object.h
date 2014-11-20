@@ -10,7 +10,7 @@
 
 class Object {
 public:
-	Object();
+	Object(int p = 0):poids(p) {} ;
 	virtual ~Object();
 	int poids;
 

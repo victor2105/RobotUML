@@ -1,0 +1,1 @@
+Le methods des etats n'ont pas besoin de : retourner int et recevoir objet.

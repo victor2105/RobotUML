@@ -7,11 +7,6 @@
 
 #include "../objets/Object.h"
 
-Object::Object() {
-	// TODO Auto-generated constructor stub
-
-}
-
 Object::~Object() {
 	// TODO Auto-generated destructor stub
 }

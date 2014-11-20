@@ -17,5 +17,6 @@ EnRoute::~EnRoute() {
 }
 
 string EnRoute::figer(){
+	cout << "aller au " << FIGE << endl ;
 	return FIGE;
 }

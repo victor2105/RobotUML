@@ -10,8 +10,10 @@
 Robot::Robot() {
 	// TODO Auto-generated constructor stub
 	eR = BASE_ETAT->getEtat(AVIDE);
+	ancienER = eR;
 	position.setx(0);
 	position.sety(0);
+	aObjet = false;
 }
 
 Robot::~Robot() {
@@ -27,30 +29,28 @@ void Robot::avancer(int x, int y){
 		position.setx(x);
 		position.sety(y);
 
-	}catch (EtatRobot::ActionNotAvaliableException e) {
+	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}
 }
 
 void Robot::tourner(string direction){
 	try{
-
-		ancienER = eR;
-
 		eR = BASE_ETAT->getEtat(eR->tourner());
 
 		this->direction = direction;
 
-	}catch (EtatRobot::ActionNotAvaliableException e) {
+	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}
 }
 
 void Robot::saisir(Object o){
 	try{
-		eR->saisir(o);
+		eR = BASE_ETAT->getEtat(eR->saisir());
 		object = o;
-	}catch (EtatRobot::ActionNotAvaliableException e) {
+		aObjet = true;
+	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}
 }
@@ -60,7 +60,7 @@ void Robot::saisir(Object o){
 	try{
 		eR->peser();
 		poids = object.getPoids();
-	}catch (EtatRobot::ActionNotAvaliableException e) {
+	}catch (EtatRobot::ActionNotAvaliableException & e) {
 		cout << "Operation non permis" << endl ;
 	}
 	return poids;
@@ -68,9 +68,9 @@ void Robot::saisir(Object o){
 
  int Robot::rencontrerPlot(Plot p){
 	try{
-		eR->rencontrerPlot(p);
+		eR = BASE_ETAT->getEtat(eR->rencontrerPlot());
 		plot = p;
-	}catch (EtatRobot::ActionNotAvaliableException e) {
+	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}
 	return 0;
@@ -79,7 +79,7 @@ void Robot::saisir(Object o){
 	try{
 		eR->evaluerPlot();
 		return plot.getHauter();
-	}catch (EtatRobot::ActionNotAvaliableException e) {
+	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}
 	return 0;
@@ -88,7 +88,7 @@ void Robot::figer(){
 	try{
 		ancienER = eR;
 		eR = BASE_ETAT->getEtat(eR->figer());
-	}catch (EtatRobot::ActionNotAvaliableException e) {
+	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}
 
@@ -97,7 +97,7 @@ void Robot::repartir(){
 	try{
 		eR->repartir();
 		eR = ancienER;
-	}catch (EtatRobot::ActionNotAvaliableException e) {
+	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}
 }
@@ -108,8 +108,9 @@ EtatRobot * Robot::getEtat(){
 
 void Robot::poser(){
 	try{
-		eR->poser();
-	}catch (EtatRobot::ActionNotAvaliableException e) {
+		eR = BASE_ETAT->getEtat(eR->poser());
+		aObjet = false;
+	}catch (EtatRobot::ActionNotAvaliableException& e) {
 		cout << "Operation non permis" << endl ;
 	}
 }

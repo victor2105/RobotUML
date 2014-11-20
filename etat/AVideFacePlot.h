@@ -16,6 +16,9 @@ public:
 	AVideFacePlot();
 	virtual ~AVideFacePlot();
 
+	int 		evaluerPlot()		{ return 0; }
+	string		tourner()			{  cout << "aller au " << AVIDE << endl ; return AVIDE; }
+	string		saisir()			{  cout << "aller au " << ENCHARGEFACEPLOT << endl ; return ENCHARGEFACEPLOT; }
 
 	static EtatRobot * instance();
 

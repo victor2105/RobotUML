@@ -12,14 +12,19 @@ int main(){
 	Robot robot;
 	int x, y;
 
-	do{
-		cout << "----------------------------------------------" << endl;
-		cout << "Robot" << endl;
-		cout << "Position : " << robot.position.getx() <<","<<robot.position.gety() << endl;
-		cout << "Direction :" << robot.direction << endl;
-		cout << "----------------------------------------------" << endl;
+			cout << "----------------------------------------------" << endl;
+			cout << "Robot" << endl;
+			cout << "Position : " << robot.position.getx() <<","<<robot.position.gety() << endl;
+			cout << "Direction :" << robot.direction << endl;
+			cout << "Objet : "; if(robot.aObjet) cout << "Oui" << endl; else cout << endl;
+			cout << "----------------------------------------------" << endl;
 
-		cin >> cmd ;
+			cin >> cmd ;
+
+	do{
+
+		cout << cmd << endl;
+
 		if(cmd == "avancer"){
 			cin >> x >> y ;
 			robot.avancer(x,y);
@@ -28,7 +33,46 @@ int main(){
 			cin >> direction ;
 			robot.tourner(direction);
 		}
-	}while(cmd != "exit");
+		if(cmd == "rencontrerPlot"){
+			int plot;
+			cin >> plot ;
+			robot.rencontrerPlot(Plot(plot));
+		}
+
+		if(cmd == "evaluerPlot"){
+			cout << robot.evaluerPlot() << endl ;
+		}
+
+		if(cmd == "peser"){
+			cout << robot.peser() << endl;
+		}
+
+		if(cmd == "saisir"){
+			int poids;
+			cin >> poids ;
+			robot.saisir(Object(poids));
+		}
+
+		if(cmd == "figer"){
+			robot.figer();
+		}
+
+		if(cmd == "repartir"){
+			robot.repartir();
+		}
+
+		if(cmd == "poser"){
+			robot.poser();
+		}
+
+		cout << "----------------------------------------------" << endl;
+		cout << "Robot" << endl;
+		cout << "Position : " << robot.position.getx() <<","<<robot.position.gety() << endl;
+		cout << "Direction :" << robot.direction << endl;
+		cout << "Objet : "; if(robot.aObjet) cout << "Oui" << endl; else cout << endl;
+		cout << "----------------------------------------------" << endl;
+
+	}while(cin >> cmd);
 /*
 	Afficheur_A aff;
 	Afficheur_A aff2;

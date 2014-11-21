@@ -16,3 +16,7 @@ EnChargeFacePlot::~EnChargeFacePlot() {
 	// TODO Auto-generated destructor stub
 }
 
+EtatRobot * EnChargeFacePlot::instance(){
+	static EnChargeFacePlot inst;
+	return &inst;
+}

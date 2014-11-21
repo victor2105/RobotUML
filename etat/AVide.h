@@ -12,13 +12,20 @@
 
 
 #include "EnRoute.h"
+#include <iostream>
+using namespace std;
 
 class AVide : public EnRoute {
 public:
 	AVide();
 	virtual ~AVide();
 
-	void avancer()			 		{}
+	void		avancer()				{}
+	string		tourner()				{ cout << "rest au " << AVIDE << endl ; return AVIDE; }
+	string		rencontrerPlot()		{  cout << "aller au " << AVIDEFACEPLOT << endl ; return AVIDEFACEPLOT; }
+
+
+	static EtatRobot * instance();
 
 };
 

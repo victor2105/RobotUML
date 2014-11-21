@@ -14,6 +14,13 @@ class EnChargeFacePlot: public EnRoute {
 public:
 	EnChargeFacePlot();
 	virtual ~EnChargeFacePlot();
+
+	int		peser()			{ return 0; }
+	string  poser()			{  cout << "aller au " << AVIDEFACEPLOT << endl ; return AVIDEFACEPLOT; }
+	string 	tourner()		{  cout << "aller au " << ENCHARGE << endl ; return ENCHARGE; }
+
+	static EtatRobot * instance();
+
 };
 
 #endif /* ETAT_ENCHARGEFACEPLOT_H_ */

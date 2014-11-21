@@ -1,0 +1,20 @@
+avancer 2 0
+tourner left
+avancer 2 10
+tourner left
+figer
+repartir
+rencontrerPlot 1
+evaluerPlot
+saisir 4
+peser
+tourner right
+tourner right
+avancer 6 10
+figer
+repartir
+peser
+rencontrerPlot 2
+poser
+tourner left
+end

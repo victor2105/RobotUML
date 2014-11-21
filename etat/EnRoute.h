@@ -10,14 +10,15 @@
 
 #include "EtatRobot.h"
 #include "Figer.h"
+#include <iostream>
+using namespace std;
 
 class EnRoute: public EtatRobot {
 public:
 	EnRoute();
 	virtual ~EnRoute();
 
-	EtatRobot * figer();
-
+	string figer();
 };
 
 #endif /* ETAT_ENROUTE_H_ */

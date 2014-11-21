@@ -16,3 +16,7 @@ AVideFacePlot::~AVideFacePlot() {
 	// TODO Auto-generated destructor stub
 }
 
+EtatRobot * AVideFacePlot::instance(){
+	static AVideFacePlot inst;
+	return &inst;
+}

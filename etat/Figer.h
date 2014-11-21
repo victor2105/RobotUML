@@ -9,12 +9,16 @@
 #define ETAT_FIGER_H_
 
 #include "EtatRobot.h"
+#include <iostream>
+using namespace std;
 
 
 class Figer: public EtatRobot {
 public:
 	Figer();
 	virtual ~Figer();
+
+	void		repartir()		{ cout << "retouner" << endl; }
 
 	static EtatRobot * instance();
 };

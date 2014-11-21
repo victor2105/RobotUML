@@ -16,3 +16,8 @@ AVide::~AVide() {
 	// TODO Auto-generated destructor stub
 }
 
+
+EtatRobot * AVide::instance(){
+	static AVide inst;
+	return &inst;
+}

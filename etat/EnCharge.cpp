@@ -16,3 +16,7 @@ EnCharge::~EnCharge() {
 	// TODO Auto-generated destructor stub
 }
 
+EtatRobot * EnCharge::instance(){
+	static EnCharge inst;
+	return &inst;
+}

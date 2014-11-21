@@ -9,11 +9,11 @@
 #ifndef OBJETS_ROBOT_H_
 #define OBJETS_ROBOT_H_
 #include <iostream>
-#include "../etat/EtatRobot.h"
-#include "../etat/AVide.h"
+#include "../etat/BasedEtat.h"
 #include "Position.h"
 #include "Object.h"
 
+#define BASE_ETAT BasedEtat::instance()
 
 using namespace std;
 
@@ -21,11 +21,16 @@ class Robot {
 public:
 	Robot();
 	virtual ~Robot();
+
 	EtatRobot * eR;
 	EtatRobot * ancienER;
-	string direction;
 
+	bool aObjet;
+
+	string direction;
 	Position position;
+	Object object;
+	Plot plot;
 
 
 	void		avancer(int x, int y);
@@ -37,7 +42,7 @@ public:
 	void		figer();
 	void		repartir();
 	EtatRobot * getEtat();
-	void		afficher();
+	void		poser();
 
 };
 

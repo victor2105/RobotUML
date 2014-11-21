@@ -21,6 +21,7 @@ using namespace std;
 class BasedEtat {
 private:
 	map<string, EtatRobot *> tabledEtat;
+
 public:
 	BasedEtat();
 

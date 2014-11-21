@@ -10,6 +10,8 @@
 #define AVIDEFACEPLOT_H_
 
 #include "EnRoute.h"
+#include <iostream>
+using namespace std;
 
 class AVideFacePlot : public EnRoute {
 public:

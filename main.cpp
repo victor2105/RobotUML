@@ -10,20 +10,14 @@ int main(){
 
 	string cmd, direction;
 	Robot robot;
+	Afficheur_A aff;
+
+	robot.attacher(&aff);
+
 	int x, y;
 
-			cout << "----------------------------------------------" << endl;
-			cout << "Robot" << endl;
-			cout << "Position : " << robot.position.getx() <<","<<robot.position.gety() << endl;
-			cout << "Direction :" << robot.direction << endl;
-			cout << "Objet : "; if(robot.aObjet) cout << "Oui" << endl; else cout << endl;
-			cout << "----------------------------------------------" << endl;
-
-			cin >> cmd ;
 
 	do{
-
-		cout << cmd << endl;
 
 		if(cmd == "avancer"){
 			cin >> x >> y ;
@@ -65,27 +59,11 @@ int main(){
 			robot.poser();
 		}
 
-		cout << "----------------------------------------------" << endl;
-		cout << "Robot" << endl;
-		cout << "Position : " << robot.position.getx() <<","<<robot.position.gety() << endl;
-		cout << "Direction :" << robot.direction << endl;
-		cout << "Objet : "; if(robot.aObjet) cout << "Oui" << endl; else cout << endl;
-		cout << "----------------------------------------------" << endl;
+
+		cout << cmd << endl;
+		aff.afficher();
 
 	}while(cin >> cmd);
-/*
-	Afficheur_A aff;
-	Afficheur_A aff2;
-    //un faux bloc pour limiter la portée
-	{
-		Afficheur rep;
-	 	aff2.attacher(&rep);
-		aff.attacher(&rep);
-		aff.change(31);
-		aff2.change(20);
-	      
-		cout << "test" << endl; 
-		aff.change(45);
-	}*/
+
 	return 0;
 }

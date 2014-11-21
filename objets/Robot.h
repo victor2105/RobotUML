@@ -12,12 +12,13 @@
 #include "../etat/BasedEtat.h"
 #include "Position.h"
 #include "Object.h"
+#include "../afficheur/Representation.h"
 
 #define BASE_ETAT BasedEtat::instance()
 
 using namespace std;
 
-class Robot {
+class Robot : public Representation {
 public:
 	Robot();
 	virtual ~Robot();

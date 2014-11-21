@@ -29,6 +29,8 @@ void Robot::avancer(int x, int y){
 		position.setx(x);
 		position.sety(y);
 
+		notifier();
+
 	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}
@@ -40,6 +42,8 @@ void Robot::tourner(string direction){
 
 		this->direction = direction;
 
+		notifier();
+
 	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}
@@ -50,6 +54,7 @@ void Robot::saisir(Object o){
 		eR = BASE_ETAT->getEtat(eR->saisir());
 		object = o;
 		aObjet = true;
+		notifier();
 	}catch (EtatRobot::ActionNotAvaliableException &e) {
 		cout << "Operation non permis" << endl ;
 	}

@@ -9,6 +9,8 @@
 #define ETAT_ENCHARGE_H_
 
 #include "EnRoute.h"
+#include <iostream>
+using namespace std;
 
 class EnCharge  : public EnRoute  {
 public:

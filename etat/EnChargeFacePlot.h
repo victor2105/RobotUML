@@ -9,6 +9,8 @@
 #define ETAT_ENCHARGEFACEPLOT_H_
 
 #include "EnRoute.h"
+#include <iostream>
+using namespace std;
 
 class EnChargeFacePlot: public EnRoute {
 public:

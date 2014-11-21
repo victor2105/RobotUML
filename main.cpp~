@@ -13,13 +13,13 @@ int main(){
     //un faux bloc pour limiter la portée
 	{
 		Representation rep;
-	 	aff2.attacher(&rep);
-		aff.attacher(&rep);
-		aff.change(31);
-		aff2.change(20);
+	 	rep.attacher(&aff);
+		rep.attacher(&aff2);
+		
+		rep.notifier();
 	      
 		cout << "test" << endl; 
-		aff.change(45);
+
 	}
 	return 0;
 }

@@ -26,13 +26,9 @@ class Representation {
 	typedef std::list<Afficheur*>::const_iterator const_iterator;
 
  public:
- 		int test = 2;
-    void attacher( Afficheur* obs);
-    void detacher(Afficheur* obs);
- 
-    //virtual int afficher(void) const =0;
     virtual ~Representation();
-   
+    void attacher( Afficheur* obs);
+    void detacher(Afficheur* obs); 
     void notifier(void);
 };
 

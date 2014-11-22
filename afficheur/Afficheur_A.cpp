@@ -19,8 +19,7 @@ Afficheur_A::~Afficheur_A(){
 
 
 void Afficheur_A::update(const Representation* observable){
-  	Robot * r = (Robot *) observable;
-	//cout << observable->test << endl;
+  		Robot * r = (Robot *) observable;
   		this->robot.direction = r->direction;
   		this->robot.plot = r->plot;
   		this->robot.position = r->position;

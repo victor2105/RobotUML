@@ -10,32 +10,25 @@
 using namespace std;
 
 void Representation::attacher( Afficheur* obs) {
-	    //on ajoute l'observateur à notre liste 
+	//on ajoute l'observateur à notre liste 
     list.push_back(obs);
 
-    //et on lui donne un nouvel objet observé.
-   // obs->attacher(this);
 }
 void Representation::detacher(Afficheur* obs) {
-	//même chose que dans Afficheur::detacher
+	//On cherche l'Afficheur concerné puis on le supprime
 	iterator it= std::find(list.begin(),list.end(),obs);
     if(it != list.end())
        list.erase(it);
 }
 
 Representation::~Representation() {
- 	//même chose qu'avec Afficheur::~Afficheur
 	iterator itb=list.begin();
 	const_iterator ite=list.end();
 
-/*	for(;itb!=ite;++itb)
-	{
-		   (*itb)->detacher(this);
-	}*/
 }
 
 void Representation::notifier(void) {
-	//on prévient chaque observateur que l'on change de valeur
+	//on prévient chaque observateur de l'etat courant du robot
 	iterator itb=list.begin();
 	const_iterator ite=list.end();
 

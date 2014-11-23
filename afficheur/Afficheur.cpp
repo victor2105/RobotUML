@@ -8,8 +8,4 @@
 #include "../afficheur/Representation.h"
 
 using namespace std;
-/*
-void Afficheur::update(const Representation* observable) const {
-	//on affiche l'état de la variable
-	cout << observable->afficher() << endl;
-}*/
+

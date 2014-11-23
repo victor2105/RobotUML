@@ -19,7 +19,19 @@ int main(){
 	robot.attacher(&aff);			// Attacher le Afficheur_A aff au robot.
 									// Le robot est aussi une Representation
 	do{
-
+		cout << "----------------------------------------------" << endl;
+		cout << "                commande posible : " << endl;
+		cout << "|     avancer x y (avec x et y la position)     |" << endl;
+		cout << "|    tourner dir (avec dir : left, right...)    |" << endl;
+		cout << "| rencontrerPlot x (avec x la hauteur du plot)  |" << endl;
+		cout << "|                 evaluerPlot                   |" << endl;
+		cout << "|                     peser                     |" << endl;
+		cout << "|                     figer                     |" << endl;
+		cout << "|                  repartir                     |" << endl;
+		cout << "|       saisir x (x le poid a saisir )          |" << endl;
+		cout << "|                    poser                      |" << endl;
+		cout << "----------------------------------------------" << endl;
+		
 		if(cmd == "avancer"){
 			cin >> x >> y ;			// Le method avancer doit recevoir la position (x, y).
 			robot.avancer(x,y);

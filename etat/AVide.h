@@ -22,11 +22,9 @@ public:
 
 	void		avancer()				{}
 	string		tourner()				{ cout << "rest au " << AVIDE << endl ; return AVIDE; }
-	string		rencontrerPlot()		{  cout << "aller au " << AVIDEFACEPLOT << endl ; return AVIDEFACEPLOT; }
-
+	string		rencontrerPlot()		{ cout << "aller au " << AVIDEFACEPLOT << endl ; return AVIDEFACEPLOT; }
 
 	static EtatRobot * instance();
-
-};
+};\
 
 #endif /* AVIDE_H_ */

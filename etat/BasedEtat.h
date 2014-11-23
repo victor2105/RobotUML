@@ -21,15 +21,13 @@ using namespace std;
 class BasedEtat {
 private:
 	map<string, EtatRobot *> tabledEtat;
-
-public:
 	BasedEtat();
 
-	EtatRobot * getEtat(string name);
-
-	static BasedEtat * instance();
-
+public:
 	virtual ~BasedEtat();
+
+	EtatRobot * getEtat(string name);
+	static BasedEtat * instance();
 };
 
 #endif /* ETAT_BASEDETAT_H_ */

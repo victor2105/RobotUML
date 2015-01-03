@@ -12,6 +12,14 @@ Commande::~Commande(){
 	mapCmd.clear();
 }
 
+Commande * Commande::nouvelleCommande(string str, Invocateur * i){
+	Commande * c = mapCmd[str]->constructeurVirtuel(i);
+	if(c == 0){
+		throw Commande::CommandeNotFound();
+	}
+	return c;
+}
+
 /*void Commande::undo() {
 	--Commande::index;
 	if(Commande::vecCmd[Commande::index] == NULL) throw UndoNotPossibleException();

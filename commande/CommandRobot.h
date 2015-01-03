@@ -14,6 +14,16 @@ class CommandRobot: public Commande {
 public:
 	CommandRobot();
 	virtual ~CommandRobot();
+	void execute(Robot * r){
+
+	}
+	void desexecute(){
+
+	}
+
+	Commande * contructeurVirtuel(Invocateur * i){
+		return 0;
+	}
 };
 
 #endif /* COMMANDE_COMMANDROBOT_H_ */

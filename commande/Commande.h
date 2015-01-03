@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <map>
+#include "../objets/Robot.h"
 
 
 using namespace std;
@@ -26,18 +27,15 @@ public:
 	static class RedoNotPossibleException {};
 	static class CommandeNotFound {};
 	
-	~Commande();
+	virtual ~Commande();
 
-	static Commande & nouvelleCommande(string str){
-		Commande * c = mapCmd[str]->constructeurVirtuel();
-		if(!c){
-			throw Commande::CommandeNotFound();
-		}
-	}
+	void initCommands();
+	static Commande * nouvelleCommande(string str, Invocateur * i);
+
 	static void undo();
 	static bool redo();
 
-	virtual Commande * constructeurVirtuel() = 0;
+	virtual Commande * constructeurVirtuel(Invocateur * i) = 0;
 
 	virtual void execute(Robot & r) = 0;
 	virtual void desexecute() = 0;

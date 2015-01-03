@@ -18,7 +18,7 @@ Commande * Invocateur::getCommand(){
 	try{
 		string name;
 		cin >> name;
-		return Commande::nouvelleCommande(name);
+		return Commande::nouvelleCommande(name, this);
 	}catch(Commande::CommandeNotFound &){
 		return NULL;
 	}

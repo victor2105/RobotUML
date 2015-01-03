@@ -16,7 +16,8 @@ class Invocateur {
   private:
 	
   public:
-  
+  string getString();
+  Commande * getCommand();
 };
 
 #endif /* INVOCATEUR_H_ */

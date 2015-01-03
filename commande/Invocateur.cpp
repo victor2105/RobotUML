@@ -7,3 +7,14 @@
 
 #include "Invocateur.h"
 
+
+string Invocateur::getString(){
+	string str;
+	cin >> str;
+	return str;
+}
+
+Commande * Invocateur::getCommand(){
+
+	return NULL;
+}

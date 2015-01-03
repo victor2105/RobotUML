@@ -15,12 +15,12 @@
 using namespace std;
 
 class Commande {
-  private:
+private:
 	static map<string, Commande*> mapCmd;
 	static vector<Commande*> vecCmd;
 	static int index;
-  public:
-  
+public:
+
   	// Exception
 	class UndoNotPossibleException {};
 	class RedoNotPossibleException {};
@@ -29,9 +29,9 @@ class Commande {
 	static void undo();
 	static bool redo();
 	/*
-	void constructeurVirtuel();
-	
-	virtual void execute(Robot& r) = 0;*/
+		void constructeurVirtuel();
+	*/
+	virtual void execute(Robot & r) = 0;
 	virtual void desexecute() = 0;
 	//virtual bool reversible() = 0;
 };

@@ -11,7 +11,7 @@
 class Position {
 	int x, y;
 public:
-	Position();
+	Position(int x=0, int y=0): x(x), y(y){}
 	virtual ~Position();
 
 	void	setx(int x);

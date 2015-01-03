@@ -7,6 +7,11 @@
 
 #include "Commande.h"
 
+
+Commande::~Commande(){
+	mapCmd.clear();
+}
+
 /*void Commande::undo() {
 	--Commande::index;
 	if(Commande::vecCmd[Commande::index] == NULL) throw UndoNotPossibleException();

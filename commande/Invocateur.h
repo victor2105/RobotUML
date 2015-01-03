@@ -17,6 +17,7 @@ class Invocateur {
 	
   public:
   string getString();
+  int getInt();
   Commande * getCommand();
 };
 

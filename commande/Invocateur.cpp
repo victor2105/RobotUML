@@ -15,6 +15,18 @@ string Invocateur::getString(){
 }
 
 Commande * Invocateur::getCommand(){
+	try{
+		string name;
+		cin >> name;
+		return Commande::nouvelleCommande(name);
+	}catch(Commande::CommandeNotFound &){
+		return NULL;
+	}
+}
 
-	return NULL;
+
+int getInt(){
+	int i;
+	cin >> i;
+	return i;
 }

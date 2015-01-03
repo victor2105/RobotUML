@@ -22,15 +22,23 @@ private:
 public:
 
   	// Exception
-	class UndoNotPossibleException {};
-	class RedoNotPossibleException {};
+	static class UndoNotPossibleException {};
+	static class RedoNotPossibleException {};
+	static class CommandeNotFound {};
 	
-	//static Commande nouvelleCommande(string str);
+	~Commande();
+
+	static Commande & nouvelleCommande(string str){
+		Commande * c = mapCmd[str]->constructeurVirtuel();
+		if(!c){
+			throw Commande::CommandeNotFound();
+		}
+	}
 	static void undo();
 	static bool redo();
-	/*
-		void constructeurVirtuel();
-	*/
+
+	virtual Commande * constructeurVirtuel() = 0;
+
 	virtual void execute(Robot & r) = 0;
 	virtual void desexecute() = 0;
 	//virtual bool reversible() = 0;

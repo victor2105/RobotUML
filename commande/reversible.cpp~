@@ -1,0 +1,33 @@
+/*
+ * Reversible.cpp
+ *
+ *  Created on: 9 dec. 2014
+ *      Author: GuillaumeUnice
+ */
+
+#include "Reversible.h"
+
+using namespace std;
+
+
+void Reversible::execute(Robot * r) {
+	//--Commande::index;
+	try {
+	
+	} catch(...) {
+		cerr << "Undo not possible" << endl;
+	}
+	vecCmd[++Commande::index]->reversible();
+	/*if(Commande::vecCmd[index] == NULL) throw UndoNotPossibleException();
+	Commande::vecCmd[index]->desexecute();*/
+}
+
+
+/*
+	if(Commande::vecCmd.size <= Commande::index) throw RedoNotPossibleException();
+	
+}*/
+
+Commande * constructeurVirtuel(Invocateur * i) {
+	return new Reversible();
+}

@@ -2,7 +2,7 @@
  * Commande.h
  *
  *  Created on: 8 dec. 2014
- *      Author: guillaume
+ *      Author: GuillaumeUnice
  */
 
 #ifndef COMMANDE_H_
@@ -11,30 +11,27 @@
 #include <vector>
 #include <map>
 
+#include "../commande/Invocateur.h"
 #include "../objets/Robot.h"
 
 using namespace std;
 
+
 class Commande {
-  private:
-	static map<string, Commande*> mapCmd;
-	static vector<Commande*> vecCmd;
-	static int index;
   public:
-  
+  	static int index;
+
+	static Commande * nouvelleCommande(string d, Invocateur * i);
+	virtual void execute(Robot * r) = 0;
+	
+	virtual	Commande * constructeurVirtuel(Invocateur * i) = 0;
+	
+
   	// Exception
-	class UndoNotPossibleException {};
-	class RedoNotPossibleException {};
-	
-	//static Commande nouvelleCommande(string str);
-	static void undo();
-	static bool redo();
-	/*
-	void constructeurVirtuel();
-	
-	virtual void execute(Robot& r) = 0;*/
-	virtual void desexecute() = 0;
-	//virtual bool reversible() = 0;
+	class CommandeNotExistException {};
+
 };
 
+static vector<Commande*> vecCmd;
+static map<string, Commande*> mapCmd;
 #endif /* COMMANDE_H_ */

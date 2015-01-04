@@ -3,10 +3,12 @@
 #include "./afficheur/Afficheur.h"
 #include "./afficheur/Representation.h"
 #include "./afficheur/Afficheur_A.h"
-#include "commande/Invocateur.h"
+#include "commande/InvocateurRobot.h"
 #include "commande/Commande.h"
+#include "commande/BaseCommands.h"
 
 using namespace std;
+
 
 int main(){
 
@@ -14,7 +16,7 @@ int main(){
 	string direction;				// Pour lire la direction right ou left
 	int x, y;						// Pour lire la position (x, y)
 
-	Invocateur * in = new Invocateur();
+
 
 	Robot robot;					// Robot
 
@@ -22,6 +24,10 @@ int main(){
 
 	robot.attacher(&aff);			// Attacher le Afficheur_A aff au robot.
 									// Le robot est aussi une Representation
+
+	BaseCommands bc;
+	InvocateurRobot * in = new InvocateurRobot(robot);
+
 	do{
 		cout << "----------------------------------------------" << endl;
 		cout << "                commande posible : " << endl;
@@ -36,7 +42,7 @@ int main(){
 		cout << "|                    poser                      |" << endl;
 		cout << "----------------------------------------------" << endl;
 		
-		if(cmd == "avancer"){
+		/*if(cmd == "avancer"){
 			cin >> x >> y ;			// Le method avancer doit recevoir la position (x, y).
 			robot.avancer(x,y);
 		}
@@ -69,7 +75,7 @@ int main(){
 		if(cmd == "poser"){
 			robot.poser();
 		}
-
+*/
 		cout << cmd << endl;		// Quel command a été utilisé.
 		aff.afficher();				// Montre quelques informations du robot.
 

@@ -19,7 +19,8 @@ Commande * Avancer::constructeurVirtuel(Invocateur * i){
 }
 void Avancer::execute(Robot * r){
 	robot = r;
-	robot->avancer(pNouvelle.x,pNouvelle.y);
+	pAncienne = r->position;
+	robot->avancer(pNouvelle.getx(),pNouvelle.gety());
 }
 void Avancer::desexecute(){
 	robot->position = pAncienne;

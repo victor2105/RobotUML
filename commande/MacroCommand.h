@@ -14,17 +14,17 @@ using namespace std;
 class MacroCommand: public Commande {
 public:
 	string name;
-	Invocateur in;
-	static map < string, list < Commande > > macroCommands;
+	Invocateur * in;
+	static map < string, list < Commande* > > macroCommands;
 	MacroCommand();
-	MacroCommand(string name, Invocateur i):name(name), in(i){}
+	MacroCommand(string name, Invocateur *i):name(name), in(i){}
 	virtual ~MacroCommand();
-	void execute(Robot & r);
+	void execute(Robot * r);
 	void desexecute(){
 
 	}
 
-	Commande * contructeurVirtuel(Invocateur & i);
+	Commande * constructeurVirtuel(Invocateur * i);
 
 };
 

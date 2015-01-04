@@ -14,14 +14,11 @@ string Invocateur::getString(){
 	return str;
 }
 
-Commande * Invocateur::getCommand(){
-	try{
+string Invocateur::getCommand(){
+
 		string name;
 		cin >> name;
-		return Commande::nouvelleCommande(name, this);
-	}catch(Commande::CommandeNotFound &){
-		return NULL;
-	}
+		return name;
 }
 
 

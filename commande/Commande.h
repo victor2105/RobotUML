@@ -14,25 +14,22 @@
 
 using namespace std;
 
-class Avancer;
+#include "Invocateur.h"
 
 class Commande {
 private:
+public:
 	static map<string, Commande*> mapCmd;
 	static vector<Commande*> vecCmd;
 	static int index;
-public:
 
   	// Exception
-	static class UndoNotPossibleException {};
-	static class RedoNotPossibleException {};
-	static class CommandeNotFound {};
+	class UndoNotPossibleException {};
+	class RedoNotPossibleException {};
+	class CommandeNotFound {};
 	
 	virtual ~Commande();
 
-	void initCommands(){
-		mapCmd["avancer"] = new Avancer();
-	}
 	static Commande * nouvelleCommande(string str, Invocateur * i);
 
 	static void undo();

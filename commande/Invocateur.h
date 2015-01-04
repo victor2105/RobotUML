@@ -14,11 +14,12 @@ using namespace std;
 
 class Invocateur {
   private:
-	
+  Robot * robot;
   public:
+  Invocateur(Robot * r):robot(r){}
   string getString();
   int getInt();
-  Commande * getCommand();
+  string getCommand();
 };
 
 #endif /* INVOCATEUR_H_ */

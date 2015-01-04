@@ -17,10 +17,10 @@ public:
 	EnCharge();
 	virtual ~EnCharge();
 
-	void		avancer()		 {}
-	string		tourner()		 { cout << "rest au " << ENCHARGE << endl ; return ENCHARGE; }
-	int			peser()			 { return 0; }
-	string		rencontrerPlot() { cout << "aller au " << ENCHARGEFACEPLOT << endl ; return ENCHARGEFACEPLOT; }
+	void   avancer()  {}
+	string tourner()  { cout << "rest au " << ENCHARGE << endl ; return ENCHARGE; }
+	int    peser()    { return 0; }
+	string rencontrerPlot() { cout << "aller au " << ENCHARGEFACEPLOT << endl ; return ENCHARGEFACEPLOT; }
 
 	static EtatRobot * instance();
 

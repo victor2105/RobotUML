@@ -7,6 +7,7 @@
 
 #include "Invocateur.h"
 
+<<<<<<< HEAD
 Invocateur::Invocateur(string nomFic, Robot* r) {
 
 	fdIn.open(nomFic.c_str(), ios::in);  // on ouvre le fichier en lecture
@@ -22,8 +23,30 @@ void Invocateur::nextCommande() {
 
 	string nC;
 	this->fdIn >> nC;
-	Commande::nouvelleCommande(nC, this);
+	//Commande::nouvelleCommande(nC, this);
 	
 	
 }
 
+=======
+
+string Invocateur::getString(){
+	string str;
+	cin >> str;
+	return str;
+}
+
+string Invocateur::getCommand(){
+
+		string name;
+		cin >> name;
+		return name;
+}
+
+
+int getInt(){
+	int i;
+	cin >> i;
+	return i;
+}
+>>>>>>> 29f43eb12c584fc5487eb86ccb8aec8c7affcba4

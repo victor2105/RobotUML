@@ -10,12 +10,16 @@
 
 #include <vector>
 #include <map>
+<<<<<<< HEAD
 
 #include "../commande/Invocateur.h"
+=======
+>>>>>>> 29f43eb12c584fc5487eb86ccb8aec8c7affcba4
 #include "../objets/Robot.h"
 
 using namespace std;
 
+<<<<<<< HEAD
 
 class Commande {
   public:
@@ -23,13 +27,42 @@ class Commande {
 
 	static Commande * nouvelleCommande(string d, Invocateur * i);
 	virtual void execute(Robot * r) = 0;
-	
+	void reversible() {}
+	void desexecute() {}
 	virtual	Commande * constructeurVirtuel(Invocateur * i) = 0;
 	
 
   	// Exception
 	class CommandeNotExistException {};
 
+=======
+#include "Invocateur.h"
+
+class Commande {
+private:
+public:
+	static map<string, Commande*> mapCmd;
+	static vector<Commande*> vecCmd;
+	static int index;
+
+  	// Exception
+	class UndoNotPossibleException {};
+	class RedoNotPossibleException {};
+	class CommandeNotFound {};
+	
+	virtual ~Commande();
+
+	static Commande * nouvelleCommande(string str, Invocateur * i);
+
+	static void undo();
+	static bool redo();
+
+	virtual Commande * constructeurVirtuel(Invocateur * i) = 0;
+
+	virtual void execute(Robot * r) = 0;
+	virtual void desexecute() = 0;
+	//virtual bool reversible() = 0;
+>>>>>>> 29f43eb12c584fc5487eb86ccb8aec8c7affcba4
 };
 
 static vector<Commande*> vecCmd;

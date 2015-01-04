@@ -13,12 +13,12 @@
 #include <fstream>
 
 #include "../objets/Robot.h"
-#include "../commande/Commande.h"
 
 using namespace std;
 
 class Invocateur {
   private:
+<<<<<<< HEAD
 	ifstream fdIn;
 	Robot * r;
   public:
@@ -26,6 +26,14 @@ class Invocateur {
 	void nextCommande();
 	//Exception
 	class OpenFileErrorException {};
+=======
+  Robot * robot;
+  public:
+  Invocateur(Robot * r):robot(r){}
+  string getString();
+  int getInt();
+  string getCommand();
+>>>>>>> 29f43eb12c584fc5487eb86ccb8aec8c7affcba4
 };
 
 #endif /* INVOCATEUR_H_ */

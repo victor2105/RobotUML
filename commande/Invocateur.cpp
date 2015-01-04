@@ -18,12 +18,23 @@ Invocateur::Invocateur(string nomFic, Robot* r) {
     }	
 }
 
-void Invocateur::nextCommande() {
+string Invocateur::getString(){
+	string str;
+	cin >> str;
+	return str;
+}
 
-	string nC;
-	this->fdIn >> nC;
-	//Commande::nouvelleCommande(nC, this);
-	
-	
+string Invocateur::getCommand(){
+
+		string name;
+		cin >> name;
+		return name;
+}
+
+
+int getInt(){
+	int i;
+	cin >> i;
+	return i;
 }
 

@@ -18,13 +18,19 @@ using namespace std;
 
 class Invocateur {
   private:
+
 	ifstream fdIn;
 	Robot * r;
   public:
-	Invocateur(string nomFic, Robot* r);
-	void nextCommande();
+	//Invocateur(string nomFic, Robot* r);
 	//Exception
 	class OpenFileErrorException {};
+
+	Invocateur(Robot * r):robot(r){}
+	string getString();
+	int getInt();
+	string getCommand();
+
 };
 
 #endif /* INVOCATEUR_H_ */

@@ -7,10 +7,25 @@
 
 #include "Commande.h"
 
+<<<<<<< HEAD
 using namespace std;
 
-Commande::index = 0;
+int Commande::index = 0;
 
+=======
+
+Commande::~Commande(){
+	mapCmd.clear();
+}
+
+Commande * Commande::nouvelleCommande(string str, Invocateur * i){
+	Commande * c = mapCmd[str]->constructeurVirtuel(i);
+	if(c == 0){
+		throw Commande::CommandeNotFound();
+	}
+	return c;
+}
+>>>>>>> 29f43eb12c584fc5487eb86ccb8aec8c7affcba4
 
 /*void Commande::undo() {
 	--Commande::index;

@@ -9,20 +9,23 @@
 #define COMMANDE_COMMANDROBOT_H_
 
 #include "Commande.h"
+#include "../objets/Robot.h"
 
 class CommandRobot: public Commande {
+protected:
+	Robot * robot;
 public:
 	CommandRobot();
 	virtual ~CommandRobot();
-	void execute(Robot * r){
+	void execute(Robot * r) {
 
 	}
-	void desexecute(){
+	void desexecute() {
 
 	}
 
-	Commande * contructeurVirtuel(Invocateur * i){
-		return 0;
+	Commande * constructeurVirtuel(Invocateur * i) {
+		return NULL;
 	}
 };
 

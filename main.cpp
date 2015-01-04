@@ -3,6 +3,8 @@
 #include "./afficheur/Afficheur.h"
 #include "./afficheur/Representation.h"
 #include "./afficheur/Afficheur_A.h"
+#include "commande/Invocateur.h"
+#include "commande/Commande.h"
 
 using namespace std;
 
@@ -11,6 +13,8 @@ int main(){
 	string cmd;						// Pour lire le command
 	string direction;				// Pour lire la direction right ou left
 	int x, y;						// Pour lire la position (x, y)
+
+	Invocateur * in = new Invocateur();
 
 	Robot robot;					// Robot
 
@@ -71,6 +75,7 @@ int main(){
 
 	}while(cin >> cmd);				// Lire un nouvelle command.
 
+	delete in;
 	return 0;
 }
 

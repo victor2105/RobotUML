@@ -12,8 +12,9 @@
 #include <map>
 #include "../objets/Robot.h"
 
-
 using namespace std;
+
+class Avancer;
 
 class Commande {
 private:
@@ -29,7 +30,9 @@ public:
 	
 	virtual ~Commande();
 
-	void initCommands();
+	void initCommands(){
+		mapCmd["avancer"] = new Avancer();
+	}
 	static Commande * nouvelleCommande(string str, Invocateur * i);
 
 	static void undo();
@@ -37,7 +40,7 @@ public:
 
 	virtual Commande * constructeurVirtuel(Invocateur * i) = 0;
 
-	virtual void execute(Robot & r) = 0;
+	virtual void execute(Robot * r) = 0;
 	virtual void desexecute() = 0;
 	//virtual bool reversible() = 0;
 };
